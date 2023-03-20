@@ -19,7 +19,7 @@ const slides = [
 
 const carouselArrow = document.querySelectorAll(".carousel__arrow");
 const carouselDot = document.querySelectorAll(".dot");
-const slidesLength = slides.length;
+const slidesLength = slides.length - 1;
 let i = 0;
 carouselDot[0].classList.add("dot_selected");
 
@@ -34,12 +34,7 @@ function arrowClick(direction) {
         } else {
             i += direction;
         }
-    /*for (let j = 0; j < slidesLength; j++) {
-        carouselDot[j].classList.remove("dot_selected");
-        console.log(j);
-    }*/
     carouselDot[i].classList.add("dot_selected");
-    console.log(slides[i]);
 }
 
 carouselArrow[0].addEventListener("click", function() {arrowClick(-1)}, false);
