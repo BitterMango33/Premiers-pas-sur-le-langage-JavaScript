@@ -19,9 +19,12 @@ const slides = [
 
 const carouselArrow = document.querySelectorAll(".carousel__arrow");
 const carouselDot = document.querySelectorAll(".dot");
+const carouselImage = document.getElementById("carousel__image");
+const carouselText = document.getElementById("carousel__text");
 const slidesLength = slides.length - 1;
-let i = 0;
 carouselDot[0].classList.add("dot_selected");
+let i = 0;
+
 
 function arrowClick(direction) {
     if (carouselDot[i].classList.contains("dot_selected")) {
@@ -35,6 +38,8 @@ function arrowClick(direction) {
             i += direction;
         }
     carouselDot[i].classList.add("dot_selected");
+    carouselText.innerHTML = slides[i].tagLine;
+    carouselImage.src = "./assets/images/slideshow/" + slides[i].image;
 }
 
 carouselArrow[0].addEventListener("click", function() {arrowClick(-1)}, false);
